@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World</title>
+	
+	<script src="../sencha-touch.js" type="text/javascript"></script>
+	<link href="../resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+
+	<style>
+		.list {
+			color:#ff0000;
+		}		
+		.add {
+			color:#00ff00;
+		}
+	
+	</style>
+	
+	<script type="text/javascript">
+		
+		new Ext.Application({
+			name: 'HelloWorld',
+			launch: function() {
+				
+				new Ext.TabPanel({
+					fullscreen: true,
+					<!-- html: 'Hallo wereld!' -->
+					dockedItems: [
+								{xtype:'toolbar', title:'To-do list'},
+								{xtype:'toolbar', dock:'bottom',
+								
+									items: [
+												{html:'List', cls:'list'},
+												{html:'Add', cls:'add'}
+											]								
+								}
+								],
+					
+					items: [
+								{html:'Hello', cls:'list', title:'Hello'},
+								{html:'Bar', cls:'add', title:'Bar'}
+							],
+					
+				});
+				
+			}
+		});
+		
+	</script>
+</head>
+
+<body>
+</body>
+</html>
