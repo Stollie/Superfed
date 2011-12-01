@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>helloworld</title>
+
+	<script type="text/javascript" src="lib/touch/sencha-touch.js"></script><!-- Sencha Touch library -->
+
+	<link rel="stylesheet" type="text/css" href="lib/touch/resources/css/sencha-touch.css" /><!-- Sencha Touch stylesheet -->
+    
+    <style>
+	
+		.hello { background: #F33 url('http://www.fr12.nl/images/userfiles/6572/photo.jpg') no-repeat; }
+		.world { background: #FFF; }
+	
+	</style>
+    
+    <script type="text/javascript">
+	
+		
+		new Ext.Application({ // Maak een nieuwe instantie van de class Application uit de namespace Ext. 
+			
+			name: 'helloworld', // De naam van de Applicatie
+			launch: function() { // Als alle resources zijn geladen
+			
+				new Ext.TabPanel({ // Het master panel
+					
+					fullscreen: true, // Zorgt ervoor dat de App fullscreen is
+					dockedItems: [
+						
+						{
+						xtype:'toolbar', 
+						title:'Hello World!',
+						dock:'top' 
+						}
+
+					],
+					items: [
+					
+						{ html:'Hello', cls:'hello', title:'Hello' },
+						{ html:'World', cls:'world', title:'World' }
+					
+					],
+					
+					//layout: 'hbox'
+					
+				
+					
+				}); // Het buitenste frame van de User Interface
+				
+			}
+			
+		});
+	
+	
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Word gevuld door Sencha Touch -->
+
+</body>
+
+</html>
