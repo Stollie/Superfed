@@ -1,7 +1,8 @@
 TakenApp.views.Infocard = Ext.extend(Ext.Panel, {
 	
 	title: "Informatie",
-	iconCls: "info"
+	iconCls: "info",
+	html: 'Todo: Info'
 	
 });
 

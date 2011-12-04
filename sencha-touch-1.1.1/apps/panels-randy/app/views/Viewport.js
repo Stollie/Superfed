@@ -1,7 +1,7 @@
 TakenApp.views.Viewport = Ext.extend(Ext.TabPanel, {
 	
 	fullscreen: true,
-	
+		
 	tabBar: {
 		
 		dock: 'bottom',
@@ -13,7 +13,6 @@ TakenApp.views.Viewport = Ext.extend(Ext.TabPanel, {
 	
 	defaults: {
 		
-		html: 'Tekst.',
 		styleHtmlContent: true
 		
 	},
@@ -23,22 +22,16 @@ TakenApp.views.Viewport = Ext.extend(Ext.TabPanel, {
 		{ xtype: 'addcard' },
 		{ xtype: 'donecard' },
 		{ xtype: 'infocard' }
-	]
+	],
 	
+	dockedItems: [
+		
+		{
+		xtype:'toolbar', 
+		title:'Taken App',
+		dock:'top' 
+		}
+
+	]
 
 });
-
-
-
-
-/*
-
-		
-		var header = new Ext.Toolbar({
-			dock : 'top',
-			title: 'Taken App'
-		});
-		
-				
-				
-				*/

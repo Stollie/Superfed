@@ -1,7 +1,8 @@
 TakenApp.views.Addcard = Ext.extend(Ext.Panel, {
 	
 	title: "Toevoegen",
-	iconCls: "add"
+	iconCls: "add",
+	html: 'Todo: Add'
 	
 });
 
