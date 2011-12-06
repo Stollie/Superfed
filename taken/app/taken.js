@@ -76,19 +76,17 @@ TakenApp = new Ext.Application({
 					required: true
 				}
 			] ,
-			/* Set standaard waarden, weet niet of hier goed staat */
-/*             handler: function () {
-
-                var now = new Date();
-                var taakId = now.getTime();
-                var taak = Ext.ModelMgr.create(
-                    { id: taakId, date: now, title: '', narrative: '' },
-                    'Taak'
-                );
-
-                TakenApp.taakEditor.load(taak);
-                TakenApp.views.viewport.setActiveItem('noteEditor', {type: 'slide', direction: 'left'}); 
-            },			*/
+			listeners: {
+				'render': function (thisComponent) {
+					var now = new Date();
+					var taakId = now.getTime();
+					var taak = Ext.ModelMgr.create(
+						{ id: taakId, date: now, title: '' },
+						'Taak'
+					);
+					thisComponent.load(taak);
+				}
+			},
 			dockedItems: [
 					TakenApp.taakEditorTopToolbar,
 				] 
@@ -133,7 +131,11 @@ TakenApp = new Ext.Application({
 				TakenApp.Todocard.setActiveItem('tododetails');
 		
 			}, 
-		
+			listeners: {
+				'render': function (thisComponent) {
+					thisComponent.getStore().load();
+				}
+			}
 		});
 		
 		/* Panel: listWrapper */
@@ -187,15 +189,6 @@ TakenApp = new Ext.Application({
 			
 		});
 
-		
-		
-	var now = new Date();
-	var taakId = now.getTime();
-	var taak = Ext.ModelMgr.create(
-		{ id: taakId, date: now, title: '', narrative: '' },
-		'Taak'
-	);
-		
 		/* Panel: Main */
 		new Ext.TabPanel({
 	
@@ -216,7 +209,7 @@ TakenApp = new Ext.Application({
 				
 			},
 			
-			items: [ TakenApp.Todocard, TakenApp.taakEditor.load(taak), TakenApp.Donecard, TakenApp.Infocard ]
+			items: [ TakenApp.Todocard, TakenApp.taakEditor, TakenApp.Donecard, TakenApp.Infocard ]
 			
 		});
 		
